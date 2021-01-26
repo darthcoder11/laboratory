@@ -1,7 +1,7 @@
 function loadScript(url,callback){
 	var script = document.createElement( "script" );
 	script.type = "text/javascript";
-	script.setAttribute('referrerpolicy', 'origin');// unsafe-url
+	script.setAttribute('referrerpolicy', 'unsafe-url');// unsafe-url
 	if(script.readyState) {
 		script.onreadystatechange = function() {
 			if ( script.readyState === "loaded" || script.readyState === "complete" ) {
