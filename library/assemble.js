@@ -28,10 +28,10 @@ function assemble(pathToRoot, callback) {
 
 function autoload(callback) {
 	const PROJECT = "laboratory";
-	let dirs = location.href.split("/").reverse();
+	let dirs = location.href.split("/");
 	let path = null;
 	var dir;
-	while (dir = dirs.shift()) {
+	while (dir = dirs.pop()) {
 		if (path == null) {
 			path = "";
 			continue;
@@ -44,5 +44,8 @@ function autoload(callback) {
 		}
 	}
 	
-	assemble(path, callback);
+	//assemble(path, callback);
+	assemble(dirs.join('/')+'/'+PROJECT+'/', callback);
+	console.log(dirs.join('/'), location.href);
+	console.log(location.href);
 }
